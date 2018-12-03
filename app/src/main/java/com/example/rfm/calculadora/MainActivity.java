@@ -142,6 +142,61 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonRestar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reserva = etiqueta.getText().toString();
+                operador = "-";
+                etiqueta.setText("");
+            }
+        });
+
+        buttonDividir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reserva = etiqueta.getText().toString();
+                operador = "/";
+                etiqueta.setText("");
+            }
+        });
+
+        buttonMultiplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reserva = etiqueta.getText().toString();
+                operador = "*";
+                etiqueta.setText("");
+            }
+        });
+
+        buttonDecimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrar = etiqueta.getText().toString();
+                mostrar = mostrar + ".";
+                etiqueta.setText(mostrar);
+            }
+        });
+
+        buttonBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrar = etiqueta.getText().toString();
+                mostrar = mostrar.substring(0, mostrar.length() - 1);
+                etiqueta.setText(mostrar);
+            }
+        });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrar = "";
+                etiqueta.setText(mostrar);
+                reserva = "";
+                operador = "";
+            }
+        });
+
         buttonResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
