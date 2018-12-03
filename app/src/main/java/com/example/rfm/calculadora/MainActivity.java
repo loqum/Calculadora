@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.rfm.calculadora.utils.Utils;
+
 public class MainActivity extends AppCompatActivity {
 
     Button buttonClear, buttonMultiplicar, buttonDividir, buttonSumar, buttonRestar, buttonNueve,
             buttonOcho, buttonSiete, buttonSeis, buttonCinco, buttonCuatro, buttonTres, buttonDos,
-            buttonUno, buttonCero, buttonBorrar, buttonDecimal;
+            buttonUno, buttonCero, buttonBorrar, buttonDecimal, buttonResultado;
     TextView etiqueta;
     double resultado;
     String operador, mostrar, reserva;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCero = findViewById(R.id.cero);
         buttonBorrar = findViewById(R.id.borrar);
         buttonDecimal = findViewById(R.id.decimal);
+        buttonResultado = findViewById(R.id.resultado);
 
         etiqueta = findViewById(R.id.etiquetaResultado);
 
@@ -127,6 +130,39 @@ public class MainActivity extends AppCompatActivity {
                 mostrar = etiqueta.getText().toString();
                 mostrar = mostrar + "0";
                 etiqueta.setText(mostrar);
+            }
+        });
+
+        buttonSumar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reserva = etiqueta.getText().toString();
+                operador = "+";
+                etiqueta.setText("");
+            }
+        });
+
+        buttonResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrar = etiqueta.getText().toString();
+                mostrar = mostrar + "1";
+
+                if (operador.equals("-")) {
+                    resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                }
+
+                if (operador.equals("+")) {
+                    resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                }
+
+                if (operador.equals("x")) {
+                    resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                }
+
+                if (operador.equals("÷")) {
+                    resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                }
             }
         });
 
