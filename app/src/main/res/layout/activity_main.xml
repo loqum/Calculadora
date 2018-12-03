@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/ColorBackgroundAppMain"
+    android:orientation="vertical">
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Etiqueta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gridLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="100dp"
+        android:height="100dp"
+        android:textAlignment="textEnd"
+        android:textColor="#F5F5F5"
+        android:textSize="35dp" />
+
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="2dp"
+        app:columnCount="4"
+        app:orientation="horizontal"
+        app:rowCount="6">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/clear"
+            android:textColor="@color/colorButton" />
+
+        <Button
+            android:id="@+id/multiplicar"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/multiplicar"
+            android:textColor="@color/colorButton" />
+
+        <Button
+            android:id="@+id/dividir"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/dividir"
+            android:textColor="@color/colorButton" />
+
+        <Button
+            android:id="@+id/borrar"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/borrar"
+            android:textColor="@color/colorButton"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/siete"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/siete"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/ocho"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/ocho"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/nueve"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/nueve"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/sumar"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/sumar"
+            android:textColor="@color/colorButton"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/cuatro"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/cuatro"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/cinco"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/cinco"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/seis"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/seis"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/restar"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/restar"
+            android:textColor="@color/colorButton"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/uno"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/uno"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/dos"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/dos"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/tres"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/tres"
+            android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/resultado"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/resultado"
+            android:textColor="@color/colorButton"
+            app:layout_gravity="fill"
+            app:layout_rowSpan="2" />
+
+        <Button
+            android:id="@+id/cero"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/cero"
+            android:textColor="@color/colorButtonNumber"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/decimal"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/decimal"
+            android:textColor="@color/colorButtonNumber" />
+
+    </android.support.v7.widget.GridLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/Etiqueta"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-8dp"
+        android:background="?android:attr/listDivider" />
+
+
+</RelativeLayout>
