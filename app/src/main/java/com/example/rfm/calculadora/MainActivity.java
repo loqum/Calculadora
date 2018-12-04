@@ -173,8 +173,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mostrar = etiqueta.getText().toString();
-                mostrar = mostrar + ".";
-                etiqueta.setText(mostrar);
+                if (!mostrar.contains(".")) {
+                    mostrar = mostrar + ".";
+                    etiqueta.setText(mostrar);
+                }
             }
         });
 
@@ -182,8 +184,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mostrar = etiqueta.getText().toString();
-                mostrar = mostrar.substring(0, mostrar.length() - 1);
-                etiqueta.setText(mostrar);
+                if (!mostrar.equals("")) {
+                    mostrar = mostrar.substring(0, mostrar.length() - 1);
+                    etiqueta.setText(mostrar);
+                }
+
             }
         });
 
@@ -203,24 +208,30 @@ public class MainActivity extends AppCompatActivity {
                 mostrar = etiqueta.getText().toString();
                 mostrar = mostrar + "1";
 
-                if (operador.equals("-")) {
-                    resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                }
+                if (reserva != null) {
 
-                if (operador.equals("+")) {
-                    resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                }
+                    switch (operador) {
+                        case "-":
+                            resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                            etiqueta.setText(String.valueOf(resultado));
+                            break;
+                        case "+":
+                            resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                            etiqueta.setText(String.valueOf(resultado));
+                            break;
+                        case "*":
+                            resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                            etiqueta.setText(String.valueOf(resultado));
+                            break;
+                        case "/":
+                            resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                            etiqueta.setText(String.valueOf(resultado));
+                            break;
+                    }
 
-                if (operador.equals("x")) {
-                    resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                }
-
-                if (operador.equals("÷")) {
-                    resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
                 }
             }
         });
-
 
     }
 }

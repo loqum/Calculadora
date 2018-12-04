@@ -9,6 +9,7 @@
     android:layout_alignParentTop="true"
     android:background="@color/ColorBackgroundAppMain"
     android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,9 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/gridLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="4dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="100dp"
-        android:height="100dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:height="80dp"
         android:textAlignment="textEnd"
         android:textColor="#F5F5F5"
         android:textSize="35sp" />
@@ -30,42 +34,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-
-        app:columnCount="4"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="8dp"
+        app:columnCount="5"
         app:orientation="horizontal"
-        app:rowCount="6">
-
-        <Button
-            android:id="@+id/clear"
-            android:layout_margin="2dp"
-            android:background="@color/colorBackground"
-            android:text="@string/clear"
-            android:textColor="@color/colorButton" />
-
-        <Button
-            android:id="@+id/multiplicar"
-            android:layout_margin="2dp"
-            android:background="@color/colorBackground"
-            android:text="@string/multiplicar"
-            android:textColor="@color/colorButton" />
-
-        <Button
-            android:id="@+id/dividir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@color/colorBackground"
-            android:text="@string/dividir"
-            android:textColor="@color/colorButton" />
-
-        <Button
-            android:id="@+id/borrar"
-            android:layout_margin="2dp"
-            android:background="@color/colorBackground"
-            android:text="@string/borrar"
-            android:textColor="@color/colorButton"
-            app:layout_gravity="fill" />
+        app:rowCount="4">
 
         <Button
             android:id="@+id/siete"
@@ -89,11 +65,22 @@
             android:textColor="@color/colorButtonNumber" />
 
         <Button
-            android:id="@+id/sumar"
+            android:id="@+id/multiplicar"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
-            android:text="@string/sumar"
+            android:text="@string/multiplicar"
             android:textColor="@color/colorButton"
+            app:layout_columnSpan="1"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/dividir"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/dividir"
+            android:textColor="@color/colorButton"
+            app:layout_columnSpan="1"
             app:layout_gravity="fill" />
 
         <Button
@@ -117,13 +104,25 @@
             android:text="@string/seis"
             android:textColor="@color/colorButtonNumber" />
 
+
         <Button
             android:id="@+id/restar"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/restar"
             android:textColor="@color/colorButton"
+            app:layout_columnSpan="1"
             app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/sumar"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/sumar"
+            android:textColor="@color/colorButton"
+            app:layout_columnSpan="1"
+            app:layout_gravity="fill" />
+
 
         <Button
             android:id="@+id/uno"
@@ -146,15 +145,24 @@
             android:text="@string/tres"
             android:textColor="@color/colorButtonNumber" />
 
+
         <Button
-            android:id="@+id/resultado"
-            android:layout_width="95dp"
+            android:id="@+id/borrar"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
-            android:text="@string/resultado"
+            android:text="@string/borrar"
             android:textColor="@color/colorButton"
-            app:layout_gravity="fill"
-            app:layout_rowSpan="2" />
+            app:layout_columnSpan="1"
+            app:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/clear"
+            android:textColor="@color/colorButton"
+            app:layout_columnSpan="1"
+            app:layout_gravity="fill" />
 
         <Button
             android:id="@+id/cero"
@@ -171,6 +179,15 @@
             android:background="@color/colorBackground"
             android:text="@string/decimal"
             android:textColor="@color/colorButtonNumber" />
+
+        <Button
+            android:id="@+id/resultado"
+            android:layout_margin="2dp"
+            android:background="@color/colorBackground"
+            android:text="@string/resultado"
+            android:textColor="@color/colorButton"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill" />
 
     </android.support.v7.widget.GridLayout>
 
