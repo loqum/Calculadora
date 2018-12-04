@@ -1,7 +1,9 @@
 package com.example.rfm.calculadora;
 
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,6 +12,7 @@ import com.example.rfm.calculadora.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "Main";
     Button buttonClear, buttonMultiplicar, buttonDividir, buttonSumar, buttonRestar, buttonNueve,
             buttonOcho, buttonSiete, buttonSeis, buttonCinco, buttonCuatro, buttonTres, buttonDos,
             buttonUno, buttonCero, buttonBorrar, buttonDecimal, buttonResultado;
@@ -211,27 +214,73 @@ public class MainActivity extends AppCompatActivity {
                 if (reserva != null) {
 
                     switch (operador) {
+
                         case "-":
-                            resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                            etiqueta.setText(String.valueOf(resultado));
-                            break;
+
+                            if (reserva != "") {
+
+                                try {
+                                    resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    etiqueta.setText(String.valueOf(resultado));
+
+                                } catch (RuntimeException e) {
+                                    Log.e(TAG, "Error: ", e);
+                                } finally {
+                                    break;
+                                }
+                            }
+
                         case "+":
-                            resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                            etiqueta.setText(String.valueOf(resultado));
-                            break;
+
+                            if (reserva != "") {
+
+                                try {
+                                    resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    etiqueta.setText(String.valueOf(resultado));
+
+                                } catch (RuntimeException e) {
+                                    Log.e(TAG, "Error: ", e);
+
+                                } finally {
+                                    break;
+                                }
+                            }
+
                         case "*":
-                            resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                            etiqueta.setText(String.valueOf(resultado));
-                            break;
+
+                            if (reserva != "") {
+
+                                try {
+                                    resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    etiqueta.setText(String.valueOf(resultado));
+
+                                } catch (RuntimeException e) {
+                                    Log.e(TAG, "Error: ", e);
+
+                                } finally {
+                                    break;
+                                }
+                            }
+
                         case "/":
-                            resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
-                            etiqueta.setText(String.valueOf(resultado));
-                            break;
+
+                            if (reserva != "") {
+
+                                try {
+                                    resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    etiqueta.setText(String.valueOf(resultado));
+
+                                } catch (RuntimeException e) {
+                                    Log.e(TAG, "Error: ", e);
+
+                                } finally {
+                                    break;
+                                }
+                            }
                     }
 
                 }
             }
         });
-
     }
 }

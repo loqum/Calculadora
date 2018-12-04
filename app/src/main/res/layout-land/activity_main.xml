@@ -76,6 +76,7 @@
 
         <Button
             android:id="@+id/dividir"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/dividir"
@@ -107,6 +108,7 @@
 
         <Button
             android:id="@+id/restar"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/restar"
@@ -116,6 +118,7 @@
 
         <Button
             android:id="@+id/sumar"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/sumar"
@@ -148,6 +151,7 @@
 
         <Button
             android:id="@+id/borrar"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/borrar"
@@ -157,6 +161,7 @@
 
         <Button
             android:id="@+id/clear"
+            android:layout_width="150dp"
             android:layout_margin="2dp"
             android:background="@color/colorBackground"
             android:text="@string/clear"
