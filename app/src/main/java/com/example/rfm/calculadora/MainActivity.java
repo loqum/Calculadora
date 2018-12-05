@@ -1,6 +1,5 @@
 package com.example.rfm.calculadora;
 
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,36 +12,33 @@ import com.example.rfm.calculadora.utils.Utils;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Main";
-    Button buttonClear, buttonMultiplicar, buttonDividir, buttonSumar, buttonRestar, buttonNueve,
-            buttonOcho, buttonSiete, buttonSeis, buttonCinco, buttonCuatro, buttonTres, buttonDos,
-            buttonUno, buttonCero, buttonBorrar, buttonDecimal, buttonResultado;
-    TextView etiqueta;
-    double resultado;
-    String operador, mostrar, reserva;
+    private TextView etiqueta;
+    private double resultado;
+    private String operador, mostrar, reserva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonClear = findViewById(R.id.clear);
-        buttonMultiplicar = findViewById(R.id.multiplicar);
-        buttonDividir = findViewById(R.id.dividir);
-        buttonSumar = findViewById(R.id.sumar);
-        buttonRestar = findViewById(R.id.restar);
-        buttonNueve = findViewById(R.id.nueve);
-        buttonOcho = findViewById(R.id.ocho);
-        buttonSiete = findViewById(R.id.siete);
-        buttonSeis = findViewById(R.id.seis);
-        buttonCinco = findViewById(R.id.cinco);
-        buttonCuatro = findViewById(R.id.cuatro);
-        buttonTres = findViewById(R.id.tres);
-        buttonDos = findViewById(R.id.dos);
-        buttonUno = findViewById(R.id.uno);
-        buttonCero = findViewById(R.id.cero);
-        buttonBorrar = findViewById(R.id.borrar);
-        buttonDecimal = findViewById(R.id.decimal);
-        buttonResultado = findViewById(R.id.resultado);
+        Button buttonClear = findViewById(R.id.clear);
+        Button buttonMultiplicar = findViewById(R.id.multiplicar);
+        Button  buttonDividir = findViewById(R.id.dividir);
+        Button buttonSumar = findViewById(R.id.sumar);
+        Button buttonRestar = findViewById(R.id.restar);
+        Button  buttonNueve = findViewById(R.id.nueve);
+        Button  buttonOcho = findViewById(R.id.ocho);
+        Button  buttonSiete = findViewById(R.id.siete);
+        Button  buttonSeis = findViewById(R.id.seis);
+        Button  buttonCinco = findViewById(R.id.cinco);
+        Button  buttonCuatro = findViewById(R.id.cuatro);
+        Button  buttonTres = findViewById(R.id.tres);
+        Button  buttonDos = findViewById(R.id.dos);
+        Button  buttonUno = findViewById(R.id.uno);
+        Button  buttonCero = findViewById(R.id.cero);
+        Button  buttonBorrar = findViewById(R.id.borrar);
+        Button  buttonDecimal = findViewById(R.id.decimal);
+        Button  buttonResultado = findViewById(R.id.resultado);
 
         etiqueta = findViewById(R.id.etiquetaResultado);
 
@@ -217,65 +213,62 @@ public class MainActivity extends AppCompatActivity {
 
                         case "-":
 
-                            if (reserva != "") {
+                            if (!reserva.equals("")) {
 
                                 try {
-                                    resultado = Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    resultado = Utils.redondeoDecimales(Utils.restar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString())), 5);
                                     etiqueta.setText(String.valueOf(resultado));
 
                                 } catch (RuntimeException e) {
                                     Log.e(TAG, "Error: ", e);
-                                } finally {
-                                    break;
                                 }
+
+                                break;
                             }
 
                         case "+":
 
-                            if (reserva != "") {
+                            if (!reserva.equals("")) {
 
                                 try {
-                                    resultado = Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    resultado = Utils.redondeoDecimales(Utils.sumar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString())), 5);
                                     etiqueta.setText(String.valueOf(resultado));
 
                                 } catch (RuntimeException e) {
                                     Log.e(TAG, "Error: ", e);
-
-                                } finally {
-                                    break;
                                 }
+
+                                break;
                             }
 
                         case "*":
 
-                            if (reserva != "") {
+                            if (!reserva.equals("")) {
 
                                 try {
-                                    resultado = Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    resultado = Utils.redondeoDecimales(Utils.multiplicar(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString())), 5);
                                     etiqueta.setText(String.valueOf(resultado));
 
                                 } catch (RuntimeException e) {
                                     Log.e(TAG, "Error: ", e);
-
-                                } finally {
-                                    break;
                                 }
+
+                                break;
                             }
 
                         case "/":
 
-                            if (reserva != "") {
+                            if (!reserva.equals("")) {
 
                                 try {
-                                    resultado = Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString()));
+                                    resultado = Utils.redondeoDecimales(Utils.dividir(Double.parseDouble(reserva), Double.parseDouble(etiqueta.getText().toString())), 5);
                                     etiqueta.setText(String.valueOf(resultado));
 
                                 } catch (RuntimeException e) {
                                     Log.e(TAG, "Error: ", e);
-
-                                } finally {
-                                    break;
                                 }
+
+                                break;
                             }
                     }
 
